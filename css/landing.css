@@ -5,7 +5,7 @@ body
 .box h1,h2,h3,h4,h5,h6
 {
 	margin-top:0;
-	color:#00D4A2;
+	color:gold;
 	text-align: center;
 	font-weight: thin;
 	border-bottom: solid #00D4A2;
@@ -87,8 +87,9 @@ body
 }
 .circle-info 
 {
-	margin-left: 8%;
+	margin-left: 10%;
 	height:50%;
+	margin-top:6%;
 	position: relative;
 	z-index: 30;
 }
@@ -119,7 +120,7 @@ body
 	height:25%;
 	position:absolute;
 	top:105%;
-	left:10%;
+	left:6%;
 	z-index: 20;
 }
 #ticket-holder img
@@ -173,11 +174,29 @@ body
 	height:3%;
 	font-size: .5em;
 	margin-left:10%;
+	background-color: grey;
+	-transition: background-color 1s;
+    -webkit-transition: background-color 1s;
+    -moz-transition: background-color 1s;
 }
-#reset-button:hover
+/*overriding tooltip*/
+.tooltip.top .tooltip-arrow {
+  bottom: 0;
+  left: 50%;
+  margin-left: -5px;
+  border-top-color: #00D4A2;
+  border-width: 5px 5px 0;
+}
+.tooltip-inner {
+  background-color: gold;
+  color:#00D4A2;
+}/*
+.tooltip-inner {
+ background-color: gold;
+}
+.tooltip.top .tooltip-arrow
 {
-	background-color: red
-}
+	border-bottom-color: #00D4A2;
 /*
 rCade
 r - #ff7cf4

@@ -2,12 +2,13 @@
 	<head>
 		<link href='http://fonts.googleapis.com/css?family=Exo|Nova+Square|Orbitron|Open+Sans' rel='stylesheet' type='text/css'>
 		<link href="css/normalize.css" rel = "stylesheet" type = "text/css">
+		<link href = "bootstrap/css/bootstrap.css" rel = "stylesheet">
 		<link href="css/landing.css" rel = "stylesheet" type = "text/css">
 		<link href = "img/favicon.png" rel = "icon">
 		<script src = "js/jquery.js"></script>
 		<script src = "js/main.js"></script>
-		<script src = "bootstrap/bootstrap.js"></script>
-	</head>
+		<script src = "bootstrap/js/bootstrap.js"></script>
+	</head
 	<body>
 	<div id = "page-wrapper">
 		<div id = "top-section">
@@ -24,20 +25,14 @@
 		</div>
 		<div class = "box" id = "info">
 			<h2> What is Arcade? </h2>
-			<div id = "button-container">
-				<button class = "gold-button"> Play Games </button>
-				<button class = "gold-button"> Win Prizes </button>
-				<button class = "gold-button"> Don't Get Up </button>
-			</div>
-			<p> Sounds like a win-win to us. </p>
 			<div class = "circle-info" id = "circles">
-				<div id = "c1" class = "circle-wrapper">
+				<div data-placement = "top" data-toggle="tooltip" title ="Play games..." id = "c1" class = "circle-wrapper">
 					<img src = "img/circle1.png">
 				</div>
-				<div id = "c2" class = "circle-wrapper">
+				<div data-placement = "top" data-toggle="tooltip" title ="...win games..." id = "c2" class = "circle-wrapper">
 					<img src = "img/circle2.png">
 				</div>
-				<div id = "c3" class = "circle-wrapper" onclick = "animateMoney()">
+				<div data-placement = "top" data-toggle="tooltip" title ="...and get paid. Click here to get started." id = "c3" class = "circle-wrapper" onclick = "animateMoney()">
 					<img src = "img/circle3.png">
 				</div>
 				<div id ="money-animation-holder"></div>
