@@ -5,7 +5,7 @@ body
 .box h1,h2,h3,h4,h5,h6
 {
 	margin-top:0;
-	color:white;
+	color:#00D4A2;
 	text-align: center;
 	font-weight: thin;
 	border-bottom: solid #00D4A2;
@@ -15,7 +15,7 @@ body
 }
 .box p
 {
-	margin-top:0;
+	margin-top:-1%;
 	color:gold;
 	text-align: center;
 	font-weight: thin;
@@ -38,7 +38,7 @@ body
 {
 	margin: 0 auto;
 	height:100%;
-	background-image: url("../img/arcade-blurry-white.png");
+	background-image: url("../img/arcade-blurry-gold.png");
 	background-size: cover;
 }
 #animated-logo
@@ -84,16 +84,48 @@ body
 }
 .circle-info 
 {
-	margin-left: 5%;
+	margin-left: 8%;
+	height:50%;
+	position: relative;
+	z-index: 30;
 }
 .circle-info img
 {	
-	height:50%;
+	height:100%;
+	margin-right:8%;
+	display:inline-block;
+	position: relative;
+	z-index: 30;
+	opacity: .9;
 }
 .circle-info img.ticket
 {
+
+	position: relative;
+	top:50%;
+	left:50%;
 	height:10%;
 	margin-bottom: 8%;
+	z-index: 30;
+}
+#ticket-holder
+{
+	width:100%;
+	height:25%;
+	position:absolute;
+	top:40%;
+	left:10%;
+	z-index: 20;
+}
+#circle3-wrapper
+{
+	display:inline-block;
+}
+#money-animation-holder
+{
+	width:100%;
+	height:100%;
+	z-index:50;
 }
 /*
 rCade

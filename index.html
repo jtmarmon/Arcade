@@ -3,6 +3,7 @@
 		<link href='http://fonts.googleapis.com/css?family=Exo|Nova+Square|Orbitron|Open+Sans' rel='stylesheet' type='text/css'>
 		<link href="css/normalize.css" rel = "stylesheet" type = "text/css">
 		<link href="css/landing.css" rel = "stylesheet" type = "text/css">
+		<link href = "img/favicon.png" rel = "icon">
 		<script src = "js/jquery.js"></script>
 		<script src = "js/main.js"></script>
 	</head>
@@ -22,13 +23,16 @@
 		</div>
 		<div class = "box" id = "info">
 			<h2> What is Arcade? </h2>
-			<p> Arcade isn't your grandma's online gaming site.  With arcade, you can win thousands of dollars in cash prizes by playing video games from the comfort of your arm chair. </p>
+			<p style = "font-size:1.3em; font-style:bold;"> PLAY VIDEO GAMES | WIN MONEY | DON'T MOVE YOUR LEGS </p>
+			<p> Sounds like a win-win to us. </p>
 			<div class = "circle-info">
 				<img src = "img/circle1.png">
-				<img class = "ticket" src = "img/ticket.png">
 				<img src = "img/circle2.png">
-				<img class = "ticket" src = "img/ticket.png">
-				<img src = "img/circle3.png">
+				<div id = "circle3-wrapper">
+					<img id = "circle3" src = "img/circle3.png">
+				</div>
+				<div id ="money-animation-holder"></div>
+				<div id = "ticket-holder"></div>
 			</div>
 		</div>
 
