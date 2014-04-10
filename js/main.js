@@ -43,11 +43,17 @@ function animateMoney()
 
 	$("#reset-button").css({'background-color':'red'});
 }
+function getCircleOffset(circle)
+{
+	return circle.children().offset().left - (circle.width() - circle.width()/5);
+}
 function scrollTicket()
 {
 	var circle = $(this);
 	var holder = $("#ticket-holder");
-	holder.animate({"left":circle.offset().left-150},200, "linear");
+
+	console.log(getCircleOffset(circle));
+	holder.animate({"left":getCircleOffset(circle)},200, "linear");
 	circle.children().css({"border":"5px solid rgba(255,215,0,.7)", "box-shadow":"0 20px 20px rgba(255,255,255,.3), inset 0 -20px 20px rgba(255,255,255,.3)"},200, "linear");
 }
 function stopTicket()
