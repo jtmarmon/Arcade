@@ -10,11 +10,14 @@ e - #06ff81
 var ticket;
 function animateMoney()
 {
+	var holder = $("#ticket-holder");
+	holder.hide();
+	holder.stop();
 	var money = new Array();
 	var rightVals = new Array();
-		rightVals[0] = 17.5;
-		rightVals[1] = 22.5;
-		rightVals[2] = 12.5;
+		rightVals[0] = 15;
+		rightVals[1] = 20;
+		rightVals[2] = 10
 	var initBottom = 30;
 	for(var i=0; i<3;i++)
 	{
@@ -38,24 +41,16 @@ function animateMoney()
 		money[i].animate({'bottom':'+=100','opacity':'0'},1000,"linear");
 	}
 }
-function checkTicketLoc()
-{
-	var holder = $("#ticket-holder");
-	if(holder.offset().left> $("#circle3").offset().left + 60)
-	{
-		holder.hide();
-		holder.stop();
-		animateMoney();
-	}
-	setTimeout(checkTicketLoc);
-}
 function scrollTicket()
 {
+	var circle = $(this);
 	var holder = $("#ticket-holder");
-	ticketLoc = holder.offset().left;
-	holder.animate({"left":ticketLoc+=95 + "%"},20000, "linear");
-	$("#circles img").animate({"top":"-=10",'left':'+=5'},300);
-	checkTicketLoc();
+	holder.animate({"left":circle.offset().left-140},200, "linear");
+
+	circle.children().css({"border":"5px solid rgba(255,255,255,.8)", "box-shadow":"0 20px 20px rgba(255,255,255,.3), inset 0 -20px 20px rgba(255,255,255,.3)"},200, "linear");
+	circle.children().append(tooltip);
+	$("#circles img").stop();
+	//$("#circles img").animate({"top":"-=10",'left':'+=5'},300);
 	holder.queue(function()
 	{
 		$(this).dequeue();
@@ -63,30 +58,13 @@ function scrollTicket()
 }
 function stopTicket()
 {
+	var circle = $(this);
+	circle.children().each(function(){$(this).css({"border":"5px solid rgba(255,255,255,0)", "box-shadow":"0 20px 20px rgba(255,255,255,0), inset 0 -20px 20px rgba(255,255,255,0)"},200, "linear")});
 	$("#ticket-holder").clearQueue();
 	$("#ticket-holder").stop();
-	$("#circles img").animate({"top":"+=10","left":"-=5"},300);
+	$("#circles img").stop();
+	//$("#circles img").animate({"top":"+=10","left":"-=5"},300);
 }
-var colors = new Array();
-/*colors[0] = "#ff7cf4";
-colors[1] = "#ff616f";
-colors[2] = "#6ed0ff";
-colors[3] = "#06ff81";*/
-colors[0] = "#FF00FF";
-colors[1] = "red";
-colors[2] = "#00FF00";
-colors[3] = "#00FFFF";
-colors[4] = "#FFFF00";
-var borderColors = new Array();
-/*
-borderColors[0] = "#ff7cf4";
-borderColors[1] = "#ff616f";
-borderColors[2] = "#FFD700";
-borderColors[3] = "#06ff81";
-borderColors[4] = "#6ed0ff"s;
-*/
-borderColors[0] = "#FFD700";
-borderColors[1] = "#C0C0C0";
 var logoColorIndex = 0;
 var borderColorIndex = 0;
 var ticketLoc = "10";
@@ -101,7 +79,7 @@ ticket.setAttribute("z-index","20");
 ticket.setAttribute("opacity","1");
 document.getElementById("ticket-holder").appendChild(ticket);
 	
-	$('#circles img').hover(scrollTicket,stopTicket);
+	$('#circles .circle-wrapper').hover(scrollTicket,stopTicket);
 
 	$('#coin').animate({
         'opacity':'1'
@@ -110,29 +88,8 @@ document.getElementById("ticket-holder").appendChild(ticket);
     	'color':'gold'
     })
 });
-
-function animateElements()
-{
-	$("#animated-logo li").each(colorLogo);
-	logoColorIndex+=4;
-	logoColorIndex%=colors.length;
-
-	setTimeout(animateElements, 300);
-}
-function colorLogo(index, ele)
-{
-	ele = $(ele);		
-	if(!(ele.attr("id")==="coin"))
-	{
-		ele.css({"color":colors[logoColorIndex]});
-		logoColorIndex++;
-		logoColorIndex%=5;
-	}
-
-
-}
 function resetAnimations()
 {
-	ticketLoc=10;
-	$("#ticket-holder").css({'opacity':'1', 'visibility':'visbile'});
+	$("#ticket-holder").show();	
+	$("#ticket-holder").css({'opacity':'1', 'visibility':'visbile',"left":"10%"});
 }
