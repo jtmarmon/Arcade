@@ -1,22 +1,44 @@
 body
 {
-	font-family: 'Exo', sans-serif;
+	font-family: 'Open Sans', sans-serif;
 }
-p
+.box h1,h2,h3,h4,h5,h6
 {
 	margin-top:0;
 	color:white;
+	text-align: center;
+	font-weight: thin;
+	border-bottom: solid #00D4A2;
+	margin-left: 5%;
+	margin-right: 5%;
+	text-shadow: 1px 1px 15px #000000;
+}
+.box p
+{
+	margin-top:0;
+	color:gold;
+	text-align: center;
+	font-weight: thin;
+	margin-left: 5%;
+	margin-right: 5%;
+	font-size:1.2em;
+	font-style:thick;
+	text-shadow: 1px 1px 15px #000000;
 }
 .rCade-header
 {
 	text-align: center;
 
 }
+#top-section
+{
+	background-color: rgba(255,255,255,.3);
+}
 #page-wrapper
 {
 	margin: 0 auto;
 	height:100%;
-	background-image: url("../img/arcade-blurry-gold.png");
+	background-image: url("../img/arcade-blurry-white.png");
 	background-size: cover;
 }
 #animated-logo
@@ -27,34 +49,51 @@ p
 	text-align: center;
 	padding-left: 0;
 	margin-bottom: 1%;
-	border-bottom:solid silver;
+	border-bottom:solid #00D4A2;
 }
 #animated-logo li
 {
 	display:inline-block;
 	margin, padding: 0;
-	color:silver;
+	color:#00D4A2;
+	text-shadow: 1px 1px 25px #000000;
 }
-#coin 
+#animated-logo li#coin 
 {
+	color:white;
 	opacity: 0;
 	position: relative;
-	top:2em;
+	top:5px;
 	left: 0;
 	font-size: 1.5em;
 	transition: color 2s linear;
     -webkit-transition: color 2s linear;
     -moz-transition: color 2s linear;
 }
-.rCade-box
+.box
 {
+	background-color: rgba(255,255,255,.3);
+	border: solid #00D4A2;
+	border-radius:4px;
+}
+#info
+{
+	width:80%;
+	height:70%;
+	margin: auto auto;
+}
+.circle-info 
+{
+	margin-left: 5%;
+}
+.circle-info img
+{	
 	height:50%;
-	width:100%;
-	opacity:0;
-	border: solid gold;
-	transition: border 2s linear;
-    -webkit-transition: border 2s linear;
-    -moz-transition: border 2s linear;
+}
+.circle-info img.ticket
+{
+	height:10%;
+	margin-bottom: 8%;
 }
 /*
 rCade

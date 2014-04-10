@@ -8,10 +8,15 @@ e - #06ff81
 
 */
 var colors = new Array();
-colors[0] = "#ff7cf4";
+/*colors[0] = "#ff7cf4";
 colors[1] = "#ff616f";
 colors[2] = "#6ed0ff";
-colors[3] = "#06ff81";
+colors[3] = "#06ff81";*/
+colors[0] = "#FF00FF";
+colors[1] = "red";
+colors[2] = "#00FF00";
+colors[3] = "#00FFFF";
+colors[4] = "#FFFF00";
 var borderColors = new Array();
 /*
 borderColors[0] = "#ff7cf4";
@@ -28,9 +33,8 @@ var borderColorIndex = 0;
 $(document).ready(function() {
 	//animateElements();
 	$('#coin').animate({
-        'opacity':'1',
-        'top':'5px'
-    },1500);
+        'opacity':'1'
+    },2000);
     $('#coin').css({
     	'color':'gold'
     })
@@ -50,7 +54,7 @@ function animateElements()
 	logoColorIndex+=4;
 	logoColorIndex%=colors.length;
 
-	setTimeout(animateElements, 700);
+	setTimeout(animateElements, 300);
 }
 function colorLogo(index, ele)
 {
@@ -59,7 +63,7 @@ function colorLogo(index, ele)
 	{
 		ele.css({"color":colors[logoColorIndex]});
 		logoColorIndex++;
-		logoColorIndex%=4;
+		logoColorIndex%=5;
 	}
 
 
