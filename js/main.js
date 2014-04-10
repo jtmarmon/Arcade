@@ -54,6 +54,7 @@ function scrollTicket()
 	var holder = $("#ticket-holder");
 	ticketLoc = holder.offset().left;
 	holder.animate({"left":ticketLoc+=95 + "%"},20000, "linear");
+	$("#circles img").animate({"top":"-=10",'left':'+=5'},300);
 	checkTicketLoc();
 	holder.queue(function()
 	{
@@ -64,6 +65,7 @@ function stopTicket()
 {
 	$("#ticket-holder").clearQueue();
 	$("#ticket-holder").stop();
+	$("#circles img").animate({"top":"+=10","left":"-=5"},300);
 }
 var colors = new Array();
 /*colors[0] = "#ff7cf4";
@@ -99,7 +101,7 @@ ticket.setAttribute("z-index","20");
 ticket.setAttribute("opacity","1");
 document.getElementById("ticket-holder").appendChild(ticket);
 	
-	$('#info').hover(scrollTicket,stopTicket);
+	$('#circles img').hover(scrollTicket,stopTicket);
 
 	$('#coin').animate({
         'opacity':'1'
@@ -109,15 +111,6 @@ document.getElementById("ticket-holder").appendChild(ticket);
     })
 });
 
-function spectrum(){
-		borderColorIndex++;
-		borderColorIndex%=borderColors.length;
-		/*$('#middle-section').css({'backgroundColor': borderColors[borderColorIndex]}).animate({},function()
-			{
-				setTimeout(spectrum, 2200);
-			});
-	*/
-	 }
 function animateElements()
 {
 	$("#animated-logo li").each(colorLogo);
@@ -137,4 +130,9 @@ function colorLogo(index, ele)
 	}
 
 
+}
+function resetAnimations()
+{
+	ticketLoc=10;
+	$("#ticket-holder").css({'opacity':'1', 'visibility':'visbile'});
 }

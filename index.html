@@ -23,9 +23,13 @@
 		</div>
 		<div class = "box" id = "info">
 			<h2> What is Arcade? </h2>
-			<p style = "font-size:1.3em; font-style:bold;"> PLAY VIDEO GAMES | WIN MONEY | DON'T MOVE YOUR LEGS </p>
+			<div id = "button-container">
+				<button class = "gold-button"> Play Games </button>
+				<button class = "gold-button"> Win Prizes </button>
+				<button class = "gold-button"> Don't Get Up </button>
+			</div>
 			<p> Sounds like a win-win to us. </p>
-			<div class = "circle-info">
+			<div class = "circle-info" id = "circles">
 				<img src = "img/circle1.png">
 				<img src = "img/circle2.png">
 				<div id = "circle3-wrapper">
@@ -35,6 +39,7 @@
 				<div id = "ticket-holder"></div>
 			</div>
 		</div>
+		<button class = "gold-button" id = "reset-button" onclick = "resetAnimations()"> Reset </button>
 
 	</div>
 	</body>
