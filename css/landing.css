@@ -1,6 +1,7 @@
 body
 {
 	font-family: 'Open Sans', sans-serif;
+	overflow:hidden;
 }
 .box h1,h2,h3,h4,h5,h6
 {
@@ -17,7 +18,7 @@ body
 }
 .box p
 {
-	margin-top:-1%;
+	margin-top:0%;
 	color:gold;
 	text-align: center;
 	font-weight: thin;
@@ -95,7 +96,8 @@ body
 }
 .circle-info img
 {	
-	height:100%;
+	max-height: 100%;
+	max-width: 100%;
 	margin-right:10%;
 	display:inline-block;
 	position: relative;
@@ -132,6 +134,8 @@ body
 {
 	display:inline-block;
 	margin-right:10%;
+	height:100%;
+	width:24%;
 }
 .circle-wrapper#c3
 {

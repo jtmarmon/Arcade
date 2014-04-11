@@ -17,7 +17,7 @@ function animateMoney()
 	var rightVals = new Array();
 		rightVals[0] = 15;
 		rightVals[1] = 20;
-		rightVals[2] = 10
+		rightVals[2] = 10;
 	var initBottom = 30;
 	for(var i=0; i<3;i++)
 	{
@@ -36,12 +36,15 @@ function animateMoney()
 		initBottom +=10;
 	$("#money-animation-holder").append(money[i]);
 	}
-	for(var i=0; i<3; i++)
-	{
-		money[i].animate({'bottom':'+=100','opacity':'0'},1000,"linear");
-	}
+	money[0].animate({'bottom':'+=100','opacity':'0'},2000,"linear");
+	money[1].animate({'bottom':'+=100','opacity':'0'},2000,"linear");
+	money[2].animate({'bottom':'+=100','opacity':'0'},2000,"linear", redirect);
 
-	$("#reset-button").css({'background-color':'red'});
+	//$("#reset-button").css({'background-color':'red'});
+}
+function redirect()
+{
+	window.location.replace("log-in.html");
 }
 function getCircleOffset(circle)
 {
@@ -53,9 +56,7 @@ function scrollTicket()
 	var holder = $("#ticket-holder");
 
 	console.log(getCircleOffset(circle));
-	holder.animate({"left":getCircleOffset(circle)},200, "linear");
-	circle.children().css({"border":"5px solid rgba(255,215,0,.7)", "box-shadow":"0 20px 20px rgba(255,255,255,.3), inset 0 -20px 20px rgba(255,255,255,.3)"},200, "linear");
-}
+	holder.animate({"left":getCircleOffset(circle)},200, "linear");}
 function stopTicket()
 {
 	var circle = $(this);
